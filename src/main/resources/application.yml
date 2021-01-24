@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+# 配置HTTP健康检查接口
+management:
+  endpoints:
+    web:
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/new_schema?useUnicode=true&characterEncoding=utf-8&useSSL=true&autoReconnect=true&failOverReadOnly=true&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull&useAffectedRows=true&allowMultiQueries=true&socketTimeout=1000
+    username: root
+    password: 123456
+  neo4j:
+    authentication:
+      username: neo4j
+      password: secret
+---
+#日志配置文件位置																												默认生成
+logging:
+  config: classpath:log4j2.xml
+  level:
+  # 打印 dao 的sql日志
+  # com.dao: debug #
+spring:
+  config:
+    activate:
+      on-profile: dev

@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 /**
  * project name: lsm-tree-demo
  * <p>
- * description: 排序字符串表，这个数据结构尽量不会并发写，所以不需要继承 ConcurrentHashMap
+ * description: 排序字符串表，这个数据结构尽量不会并发写，所以不需要继承 ConcurrentHashMap。它本质上是一种 log segment。
  *
  * @author magicliang
  * <p>

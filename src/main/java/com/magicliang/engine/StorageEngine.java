@@ -37,6 +37,8 @@ public class StorageEngine {
     // sstables 队列，选择 queue 还是 blockingqueue 还是 linkedhashmap，queue 支持基本的出入队操作，blockingqueue
     // 支持并发安全的出入队操作，linkedhashmap 可以用来实现 lrucache（支持插入顺序和访问顺序两种构造方法），支持按照链表的 tail 和 head 操作。
 
+    // 引入稀疏索引
+
     /**
      * 缺省构造器
      */
@@ -47,6 +49,8 @@ public class StorageEngine {
 
     /**
      * TODO：优化这个 synchronized，这里之所以要用 synchronized，是为了确保，写操作、计数操作和切换操作在一个原子操作里，这样写对计数的影响不会丢失，
+     * 锁相关性对象相关的对象是什么？
+     * <p>
      * 计数成功产生的切换操作的内存表的大小也是准确的。
      * 这是一种 eager 方案，另一种异步线程方案难度比较大。
      *
